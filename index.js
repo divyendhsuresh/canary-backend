@@ -2,8 +2,8 @@ const express = require("express");
 const cors = require("cors");
 const app = express();
 const mongooseConnection = require('./config/mongodb.js');
-const formDataRout = require('./routs/formDataRout.js');
-const feedbackRout = require('./routs/feedBackRout.js')
+const formDataRout = require('./routes/formDataRoutes.js');
+const feedbackRout = require('./routes/feedbackRoutes.js')
 
 const port = 3000;
 app.use(cors());
