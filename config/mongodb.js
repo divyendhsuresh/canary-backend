@@ -1,6 +1,8 @@
 const mongoose = require("mongoose");
+require('dotenv').config(); 
 
-const dbURI = "mongodb+srv://divyendhsuresh:Jk4RmZ4rF7kddEDL@form-data.tiwnr.mongodb.net/form-data?retryWrites=true&w=majority&appName=form-data";
+
+const dbURI = process.env.MONGO_URI;
 const options = {
     useNewUrlParser: true,
     useUnifiedTopology: true,
