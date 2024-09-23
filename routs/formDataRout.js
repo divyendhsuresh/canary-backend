@@ -1,8 +1,11 @@
 const express = require('express');
 const router = express.Router();
+const FormData = require("../schemas/formDataSchema.js");
 
 router.post('/submit-form', async (req, res) => {
     try {
+        console.log({ "test": req.body });
+
         const { name, contactNumber, emailAddress, rating, comments } = req.body;
 
         // Custom validations for mobile number and email
@@ -18,7 +21,7 @@ router.post('/submit-form', async (req, res) => {
         }
 
         // Create new form data object
-        const formData = new FormData({
+        const newFormData = new FormData({
             name,
             contactNumber,
             emailAddress,
@@ -27,7 +30,7 @@ router.post('/submit-form', async (req, res) => {
         });
 
         // Save data to MongoDB
-        await formData.save();
+        await newFormData.save();
         res.status(201).json({ message: 'Form data saved successfully!' });
 
     } catch (err) {
@@ -35,5 +38,7 @@ router.post('/submit-form', async (req, res) => {
         res.status(500).json({ error: 'Internal server error' });
     }
 });
+
+
 
 module.exports = router;

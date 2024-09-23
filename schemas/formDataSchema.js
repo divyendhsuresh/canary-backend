@@ -9,14 +9,12 @@ const formDataSchema = new mongoose.Schema({
     contactNumber: {
         type: String,
         required: true,
-        match: /^[0-9]{10}$/, // assuming a 10-digit number format
     },
     emailAddress: {
         type: String,
         required: true,
         lowercase: true,
         trim: true,
-        match: /^\S+@\S+\.\S+$/, // basic email validation
     },
     rating: {
         type: Number,
@@ -31,4 +29,6 @@ const formDataSchema = new mongoose.Schema({
     }
 });
 
-module.exports = mongoose.model('FormData', formDataSchema);
+
+const FormData = mongoose.model('FormData', formDataSchema);
+module.exports = FormData;
