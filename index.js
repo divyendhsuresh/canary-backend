@@ -20,6 +20,9 @@ mongooseConnection.on('error', (err) => {
 });
 //
 
+app.get('/', (req, res) => {
+    res.send("test rout")
+})
 //routes
 app.use("/submit", formDataRout)
 app.use("/feedbacks", feedbackRout);
