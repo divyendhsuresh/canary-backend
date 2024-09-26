@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const FormData = require("../schemas/formDataSchema.js");
 
-router.post('/submit-form', async (req, res) => {
+router.post('/', async (req, res) => {
     try {
         console.log({ "test": req.body });
 

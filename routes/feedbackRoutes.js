@@ -3,7 +3,7 @@ const express = require('express');
 const router = express.Router();
 const FormData = require("../schemas/formDataSchema.js");
 
-router.get('/feedback', async (req, res) => {
+router.get('/', async (req, res) => {
     try {
         const feedback = await FormData.find({}, 'name comments rating');
         res.status(200).json(feedback);
